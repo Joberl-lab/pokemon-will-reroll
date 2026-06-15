@@ -13,7 +13,8 @@
     "verified": "13"
   },
 
-  "manifest": "https://raw.githubusercontent.com/Joberl-lab/pokemon-will-reroll/main/module.json",
+  "manifest": "https://github.com/Joberl-lab/pokemon-will-reroll/blob/main/module.json",
+  "download": "https://github.com/Joberl-lab/pokemon-will-reroll/blob/main/pokemon-will-reroll.zip",
   
   "esmodules": [
     "scripts/will-reroll.js"
