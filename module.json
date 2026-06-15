@@ -12,6 +12,9 @@
     "minimum": "13",
     "verified": "13"
   },
+
+  "manifest": "https://raw.githubusercontent.com/Joberl-lab/pokemon-will-reroll/main/module.json",
+  
   "esmodules": [
     "scripts/will-reroll.js"
   ]
