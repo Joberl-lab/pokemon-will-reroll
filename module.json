@@ -1,0 +1,18 @@
+{
+  "id": "pokemon-will-reroll",
+  "title": "Pokemon Will Reroll",
+  "description": "Erlaubt das gezielte Neuwürfeln einzelner Pokérole-Würfel über Chatkarten.",
+  "version": "1.0.0",
+  "authors": [
+    {
+      "name": "Giovanni"
+    }
+  ],
+  "compatibility": {
+    "minimum": "13",
+    "verified": "13"
+  },
+  "esmodules": [
+    "scripts/will-reroll.js"
+  ]
+}
