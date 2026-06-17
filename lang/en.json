@@ -1,0 +1,38 @@
+{
+  "WILLREROLL.Settings.allowTrainerWill.name": "Allow Trainer Will for Pokémon Rerolls",
+  "WILLREROLL.Settings.allowTrainerWill.hint": "If enabled, players can choose whether to use the Pokémon's Will or the assigned Trainer's Will when rerolling.",
+  "WILLREROLL.Settings.allowMultipleRerolls.name": "Allow Multiple Rerolls",
+  "WILLREROLL.Settings.allowMultipleRerolls.hint": "If enabled, the reroll button remains available after each use. If disabled, the button is removed after the first reroll or cancel.",
+  "WILLREROLL.Settings.showWillMessage.name": "Show Will Message",
+  "WILLREROLL.Settings.showWillMessage.hint": "If enabled, a chat message with a flavor text about using Will will be displayed after each reroll.",
+  "WILLREROLL.Settings.allowRerollAllDice.name": "Allow Reroll All Dice",
+  "WILLREROLL.Settings.allowRerollAllDice.hint": "If enabled, a 'Reroll All Dice' button will appear in the dialog, allowing you to reroll all dice (including successful ones) at once.",
+  "WILLREROLL.Dialog.rerollAllButton": "Reroll All Dice",
+  "WILLREROLL.Dialog.freeRerollLabel": "Free reroll (no Will cost)",
+
+  "WILLREROLL.Dialog.costLabel": "Cost",
+  "WILLREROLL.Dialog.spentLabel": "Spent",
+
+  "WILLREROLL.Button.label": "Use Will",
+
+  "WILLREROLL.Dialog.title": "Will Reroll",
+  "WILLREROLL.Dialog.willHeader": "Use Will",
+  "WILLREROLL.Dialog.willCost": "Cost",
+  "WILLREROLL.Dialog.willAvailable": "Will available",
+  "WILLREROLL.Dialog.trainerWillAvailable": "Trainer will available",
+  "WILLREROLL.Dialog.selectDice": "Select the dice you want to reroll.",
+  "WILLREROLL.Dialog.noFailedDice": "No failed dice available.",
+  "WILLREROLL.Dialog.rerollButton": "Reroll",
+  "WILLREROLL.Dialog.cancelButton": "Cancel",
+  "WILLREROLL.Dialog.dsnFlavor": "Will Reroll",
+
+  "WILLREROLL.Notifications.notEnoughWill": "{name} does not have enough Will.",
+  "WILLREROLL.Notifications.noDiceSelected": "You have not selected any dice.",
+  "WILLREROLL.Notifications.noPokemon": "No Pokémon found.",
+  "WILLREROLL.Notifications.costMismatch": "The distributed Will costs must add up to exactly the number of selected dice.",
+
+  "WILLREROLL.WillMessage.fallback": "{name} uses their Will.",
+  "WILLREROLL.TrainerWillMessage.fallback": "{trainer} supports {pokemon}."
+
+  
+}
