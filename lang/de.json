@@ -1,0 +1,37 @@
+{
+  "WILLREROLL.Settings.allowTrainerWill.name": "Trainer-Wille für Pokémon-Rerolls zulassen",
+  "WILLREROLL.Settings.allowTrainerWill.hint": "Wenn aktiviert, können Spieler beim Reroll auswählen, ob der Wille des Pokémon oder des zugewiesenen Trainers verwendet wird.",
+  "WILLREROLL.Settings.allowMultipleRerolls.name": "Mehrfach-Rerolls erlauben",
+  "WILLREROLL.Settings.allowMultipleRerolls.hint": "Wenn aktiviert, bleibt der Reroll-Button nach jeder Nutzung verfügbar. Wenn deaktiviert, wird der Button nach dem ersten Reroll oder Abbruch entfernt.",
+  "WILLREROLL.Settings.showWillMessage.name": "Willens-Nachricht anzeigen",
+  "WILLREROLL.Settings.showWillMessage.hint": "Wenn aktiviert, wird nach jedem Reroll eine Chat-Nachricht mit einem Flavour-Text über die Willensnutzung angezeigt.",
+  "WILLREROLL.Settings.allowRerollAllDice.name": "Alle Würfel neu würfeln erlauben",
+  "WILLREROLL.Settings.allowRerollAllDice.hint": "Wenn aktiviert, erscheint im Dialog ein Button 'Alle Würfel neu würfeln', mit dem alle Würfel (auch erfolgreiche) auf einmal neu geworfen werden können.",
+  "WILLREROLL.Dialog.rerollAllButton": "Alle Würfel neu würfeln",
+  
+  "WILLREROLL.Dialog.freeRerollLabel": "Kostenloser Reroll (keine Willenskosten)",
+
+  "WILLREROLL.Dialog.costLabel": "Kosten",
+  "WILLREROLL.Dialog.spentLabel": "Verteilt",
+
+  "WILLREROLL.Button.label": "Wille einsetzen",
+
+  "WILLREROLL.Dialog.title": "Wille-Reroll",
+  "WILLREROLL.Dialog.willHeader": "Wille einsetzen",
+  "WILLREROLL.Dialog.willCost": "Kosten",
+  "WILLREROLL.Dialog.willAvailable": "Wille verfügbar",
+  "WILLREROLL.Dialog.trainerWillAvailable": "Trainer-Wille verfügbar",
+  "WILLREROLL.Dialog.selectDice": "Wähle die Würfel aus, die neu gewürfelt werden sollen.",
+  "WILLREROLL.Dialog.noFailedDice": "Keine fehlgeschlagenen Würfel verfügbar.",
+  "WILLREROLL.Dialog.rerollButton": "Neu würfeln",
+  "WILLREROLL.Dialog.cancelButton": "Abbrechen",
+  "WILLREROLL.Dialog.dsnFlavor": "Willens-Reroll",
+
+  "WILLREROLL.Notifications.notEnoughWill": "{name} hat nicht genug Wille.",
+  "WILLREROLL.Notifications.noDiceSelected": "Du hast keine Würfel ausgewählt.",
+  "WILLREROLL.Notifications.noPokemon": "Kein Pokémon gefunden.",
+  "WILLREROLL.Notifications.costMismatch": "Die verteilten Wille-Kosten müssen genau der Anzahl der ausgewählten Würfel entsprechen.",
+
+  "WILLREROLL.WillMessage.fallback": "{name} setzt seinen Willen ein.",
+  "WILLREROLL.TrainerWillMessage.fallback": "{trainer} unterstützt {pokemon}."
+}

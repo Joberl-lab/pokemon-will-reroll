@@ -1,0 +1,37 @@
+{
+  "WILLREROLL.Settings.allowTrainerWill.name": "Разрешить Волю Тренера для перебросов покемонов",
+  "WILLREROLL.Settings.allowTrainerWill.hint": "Если включено, игроки могут выбирать, использовать ли Волю покемона или назначенного тренера при перебросе.",
+  "WILLREROLL.Settings.allowMultipleRerolls.name": "Разрешить множественные перебросы",
+  "WILLREROLL.Settings.allowMultipleRerolls.hint": "Если включено, кнопка переброса остаётся доступной после каждого использования. Если выключено — кнопка удаляется после первого переброса или отмены.",
+  "WILLREROLL.Settings.showWillMessage.name": "Показывать сообщение о Воле",
+  "WILLREROLL.Settings.showWillMessage.hint": "Если включено, после каждого переброса будет отображаться сообщение в чате с текстом об использовании Воли.",
+  "WILLREROLL.Settings.allowRerollAllDice.name": "Разрешить переброс всех кубиков",
+  "WILLREROLL.Settings.allowRerollAllDice.hint": "Если включено, в диалоге появится кнопка 'Перебросить все кубики', позволяющая перебросить все кубики (включая успешные) за один раз.",
+  "WILLREROLL.Dialog.rerollAllButton": "Перебросить все кубики",
+  
+  "WILLREROLL.Dialog.freeRerollLabel": "Бесплатный переброс (без траты Воли)",
+  
+  "WILLREROLL.Dialog.costLabel": "Стоимость",
+  "WILLREROLL.Dialog.spentLabel": "Потрачено",
+
+  "WILLREROLL.Button.label": "Использовать Волю",
+
+  "WILLREROLL.Dialog.title": "Переброс по Воле",
+  "WILLREROLL.Dialog.willHeader": "Использовать Волю",
+  "WILLREROLL.Dialog.willCost": "Стоимость",
+  "WILLREROLL.Dialog.willAvailable": "Воля доступна",
+  "WILLREROLL.Dialog.trainerWillAvailable": "Воля тренера доступна",
+  "WILLREROLL.Dialog.selectDice": "Выберите кубики, которые хотите перебросить.",
+  "WILLREROLL.Dialog.noFailedDice": "Нет проваленных кубиков.",
+  "WILLREROLL.Dialog.rerollButton": "Перебросить",
+  "WILLREROLL.Dialog.cancelButton": "Отмена",
+  "WILLREROLL.Dialog.dsnFlavor": "Переброс по Воле",
+
+  "WILLREROLL.Notifications.notEnoughWill": "У {name} недостаточно Воли.",
+  "WILLREROLL.Notifications.noDiceSelected": "Вы не выбрали ни одного кубика.",
+  "WILLREROLL.Notifications.noPokemon": "Покемон не найден.",
+  "WILLREROLL.Notifications.costMismatch": "Распределённые затраты Воли должны точно равняться количеству выбранных кубиков.",
+
+  "WILLREROLL.WillMessage.fallback": "{name} использует свою Волю.",
+  "WILLREROLL.TrainerWillMessage.fallback": "{trainer} поддерживает {pokemon}."
+}
