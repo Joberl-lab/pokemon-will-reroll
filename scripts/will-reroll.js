@@ -785,7 +785,15 @@ async function updatePokeroleRollMessage(message, oldResults, newResults) {
 
   // --- Handle REGULAR success rolls ---
   const originalContent = message.content;
-  const newSuccesses = countSuccesses(newResults);
+  const rawSuccesses = countSuccesses(newResults);
+  
+  let constantBonus = 0;
+  const sysAccuracyData = message.getFlag("pokerole", "accuracyData");
+  if (sysAccuracyData && typeof sysAccuracyData.constantBonus === 'number') {
+    constantBonus = sysAccuracyData.constantBonus;
+  }
+  const finalSuccesses = rawSuccesses + constantBonus;
+
   const requiredSuccesses = getRequiredSuccesses(originalContent);
 
   await message.setFlag(MODULE_ID, "willModified", true);
@@ -796,16 +804,20 @@ async function updatePokeroleRollMessage(message, oldResults, newResults) {
     /success(?:es)? required/i.test(originalContent);
 
   let content = originalContent;
-  content = replaceSuccessText(content, newSuccesses);
+  content = replaceSuccessText(content, finalSuccesses);
   content = replaceDiceResults(content, newResults);
-  content = replaceDamageText(content, originalContent, newSuccesses);
-  content = replaceApplyDamageData(content, newSuccesses);
+  content = replaceDamageText(content, originalContent, finalSuccesses);
+  content = replaceApplyDamageData(content, finalSuccesses);
 
-  if (isAccuracyRoll && newSuccesses >= requiredSuccesses) {
+  if (isAccuracyRoll && finalSuccesses >= requiredSuccesses) {
     const moveId =
       getOriginalMoveId(originalContent) ??
       await getMoveIdFromFlavor(message, originalFlavor);
-    content = addPokeroleDefenseButtons(message, content, newSuccesses, moveId);
+    content = addPokeroleDefenseButtons(message, content, finalSuccesses, moveId);
+  } else if (isAccuracyRoll && finalSuccesses < requiredSuccesses) {
+    const wrapper = $(`<div>${content}</div>`);
+    wrapper.find('.pokerole .action-buttons').closest('.pokerole').remove();
+    content = wrapper.html();
   }
 
   await message.update({ content });
@@ -858,7 +870,7 @@ async function getMoveIdFromFlavor(message, flavor) {
 
 function replaceSuccessText(content, successes) {
   if (!content) return content;
-  const label = successes === 1 ? "success" : "successes";
+  const label = "successes"; /* successes === 1 ? "success" :  */
   return content.replace(/<b>\d+\s+success(?:es)?<\/b>/i, `<b>${successes} ${label}</b>`);
 }
 
