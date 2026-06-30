@@ -59,7 +59,7 @@ Hooks.once("init", () => {
 //  CHAT MESSAGE HOOK – inject reroll button
 // ============================================================
 
-Hooks.on("renderChatMessage", (message, html) => {
+Hooks.on("renderChatMessageHTML", (message, html) => {
   const root = html instanceof jQuery ? html : $(html);
 
   if (message.getFlag(MODULE_ID, "willModified")) {
@@ -761,6 +761,29 @@ async function createWillMessageOnce(
 // ============================================================
 
 async function updatePokeroleRollMessage(message, oldResults, newResults) {
+  // --- Handle CLASH messages ---
+  const clashData = message.flags?.clashData || message.getFlag("pokerole", "clashData");
+  if (clashData) {
+    const expected = clashData.expectedSuccesses;
+    const successHtmlTemplate = clashData.successHtml;
+    const failureHtmlTemplate = clashData.failureHtml;
+
+    const newSuccesses = countSuccesses(newResults);
+    let content;
+    if (newSuccesses >= expected) {
+      content = successHtmlTemplate;
+    } else {
+      content = failureHtmlTemplate;
+    }
+    content = replaceSuccessText(content, newSuccesses);
+    content = replaceDiceResults(content, newResults);
+
+    await message.update({ content });
+    await message.setFlag(MODULE_ID, "willModified", true);
+    return;
+  }
+
+  // --- Handle REGULAR success rolls ---
   const originalContent = message.content;
   const newSuccesses = countSuccesses(newResults);
   const requiredSuccesses = getRequiredSuccesses(originalContent);
@@ -787,6 +810,10 @@ async function updatePokeroleRollMessage(message, oldResults, newResults) {
 
   await message.update({ content });
 }
+
+// ============================================================
+//  HELPER FUNCTIONS
+// ============================================================
 
 function getRequiredSuccesses(content) {
   const match = content.match(/\((\d+)\s+success(?:es)? required\)/i);
@@ -830,11 +857,13 @@ async function getMoveIdFromFlavor(message, flavor) {
 }
 
 function replaceSuccessText(content, successes) {
+  if (!content) return content;
   const label = successes === 1 ? "success" : "successes";
   return content.replace(/<b>\d+\s+success(?:es)?<\/b>/i, `<b>${successes} ${label}</b>`);
 }
 
 function replaceDiceResults(content, newResults) {
+  if (!content) return content;
   const wrapper = $(`<div>${content}</div>`);
   const diceList = wrapper.find(".dice-rolls").first();
   if (!diceList.length) return content;
